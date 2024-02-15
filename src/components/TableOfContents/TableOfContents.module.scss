@@ -1,0 +1,23 @@
+.tableOfContents {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  height: 800px;
+}
+
+.navigation {
+  min-width: 232px;
+  border: 1px solid #e0e0e0;
+  margin-right: 24px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 10px;
+  overflow: auto;
+}
+
+.contentView {
+  min-width: 1050px;
+  overflow: auto;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+}

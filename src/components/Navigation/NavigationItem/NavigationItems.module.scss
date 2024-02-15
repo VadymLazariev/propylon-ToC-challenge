@@ -1,0 +1,41 @@
+@import 'src/scss/variables';
+
+.chapterItem {
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &.expanded {
+    background-color: $chapter-background-hover;
+  }
+
+  &.selectedNavItem {
+    background-color: $color-primary-1;
+  }
+
+  & > .expandIcon {
+    position: absolute;
+  }
+
+  & > .iconExpanded {
+    transform: rotate(90deg);
+  }
+}
+
+@for $i from 1 through 5 {
+  .level-#{$i} {
+    padding-left: 16px + $indent-step * $i;
+  }
+}
+
+@for $i from 1 through 5 {
+  .level-icon-#{$i} {
+    left: 10px + $position-step * $i;
+  }
+}

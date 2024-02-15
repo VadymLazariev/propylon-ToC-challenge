@@ -1,0 +1,29 @@
+@import '../../../scss/variables';
+
+.somethingWentWrong {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: $viewport-height;
+}
+
+.transparentText {
+  opacity: 0.5;
+}
+
+.retryBtn {
+  margin-top: 5px;
+}

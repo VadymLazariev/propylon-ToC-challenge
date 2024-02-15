@@ -1,0 +1,14 @@
+$chapter-background: #eee;
+$chapter-background-hover: lighten($chapter-background, 5%);
+$chapter-background-expanded: $chapter-background;
+
+$chapter-border: #ccc;
+$indent-step: 16px;
+$position-step: 10px;
+
+$color-primary-1: #3f3d6b;
+
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+
+$viewport-height: calc(100vh - 300px);

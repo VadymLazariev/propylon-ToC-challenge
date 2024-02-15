@@ -1,0 +1,106 @@
+@import '../../../scss/variables';
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  position: relative;
+
+  &:hover {
+    .tooltip-drop {
+      opacity: 1;
+
+      &.tooltip-top,
+      &.tooltip-bottom {
+        transform: translate(-50%, 0);
+      }
+
+      &.tooltip-left,
+      &.tooltip-right {
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .tooltip-drop {
+    position: absolute;
+    max-width: 200px;
+    width: max-content;
+    opacity: 0;
+    padding: 0.75rem 0.875rem;
+    background-color: $color-primary-1;
+    font-size: 0.875rem;
+    text-align: left;
+    z-index: 1;
+    transition: all 0.15s ease-in-out;
+    border-radius: 0.188rem;
+    color: $white;
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 0.375rem solid transparent;
+      border-top-color: $color-primary-1;
+    }
+
+    &.tooltip-left,
+    &.tooltip-right {
+      top: 50%;
+
+      &:before {
+        top: 50%;
+      }
+    }
+
+    &.tooltip-left {
+      right: calc(100% + 0.625rem);
+      transform: translate(-0.25rem, -50%);
+
+      &:before {
+        left: 100%;
+        transform: translate(0, -50%) rotate(-90deg);
+      }
+    }
+
+    &.tooltip-right {
+      left: calc(100% + 0.625rem);
+      transform: translate(0.25rem, -50%);
+
+      &:before {
+        right: 100%;
+        transform: translate(0, -50%) rotate(90deg);
+      }
+    }
+
+    &.tooltip-top,
+    &.tooltip-bottom {
+      left: 50%;
+      transform: translate(-50%, 0.625rem);
+
+      &:before {
+        left: 50%;
+      }
+    }
+
+    &.tooltip-top {
+      bottom: calc(100% + 0.625rem);
+
+      &:before {
+        top: 100%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    &.tooltip-bottom {
+      top: calc(100% + 0.625rem);
+
+      &:before {
+        bottom: 100%;
+        transform: translate(-50%, 0) rotate(180deg);
+      }
+    }
+  }
+}

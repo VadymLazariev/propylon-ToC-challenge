@@ -1,0 +1,35 @@
+@import 'variables';
+
+.btn {
+  border: 0;
+  padding: 10px;
+  background: $color-primary-1;
+  color: $black;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.52);
+    transition: 0.3s ease-in;
+  }
+
+  &:active {
+    transform: translateY(0);
+    transition: 0.3s ease-out;
+  }
+}
+
+.emptyBtn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
