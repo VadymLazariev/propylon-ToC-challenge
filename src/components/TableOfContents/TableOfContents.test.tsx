@@ -84,4 +84,23 @@ describe( '<TableOfContents/>', () => {
         const loader = await screen.findByRole(TestRoles.Loading);
         expect(loader).toBeInTheDocument();
     });
+
+    it('invoke refetch on button click', async () => {
+        const mockRefetch = jest.fn();
+        jest.spyOn(
+            useGetDocumentStructure,
+            'useGetDocumentStructure'
+        ).mockReturnValue({
+            data: [],
+            isLoading: false,
+            isError: true,
+            refetch: mockRefetch,
+        });
+        customRender(<TableOfContents/>);
+        const refetchButton = await screen.findByRole(
+            TestRoles.ButtonErrorRefetch
+        );
+        userEvent.click(refetchButton);
+        expect(mockRefetch).toBeCalledTimes(1);
+    });
 });
