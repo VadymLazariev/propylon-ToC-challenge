@@ -8,6 +8,7 @@ import {TableOfContents} from "./TableOfContents";
 import {chaptersDto} from "../../test/mockData";
 import {TestRoles} from "../../test/testRoles";
 import userEvent from "@testing-library/user-event";
+import * as useGetDocumentStructure from "../../hooks/useGetDocumentStructure";
 
 axios.interceptors.response.use((response) => response.data);
 
@@ -51,5 +52,36 @@ describe( '<TableOfContents/>', () => {
             expect(chapters[3]).toHaveClass('selectedNavItem');
             expect(contentViewChapter).toHaveClass('selectedChapter');
         })
+    });
+
+    it('<TableOfContents/> renders error', async () => {
+        console.error = jest.fn(); // suppress error in the console
+        jest.spyOn(
+            useGetDocumentStructure,
+            'useGetDocumentStructure'
+        ).mockReturnValue({
+            data: undefined,
+            isError: true,
+            isLoading: false,
+            refetch: jest.fn(),
+        });
+        customRender(<TableOfContents />);
+        const error = await screen.findByRole(TestRoles.Error);
+        expect(error).toBeInTheDocument();
+    });
+
+    it('<TableOfContents/> renders loader', async () => {
+        jest.spyOn(
+            useGetDocumentStructure,
+            'useGetDocumentStructure'
+        ).mockReturnValue({
+            data: undefined,
+            isLoading: true,
+            isError: false,
+            refetch: jest.fn(),
+        });
+        customRender(<TableOfContents />);
+        const loader = await screen.findByRole(TestRoles.Loading);
+        expect(loader).toBeInTheDocument();
     });
 });
