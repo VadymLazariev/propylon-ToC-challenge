@@ -1,7 +1,8 @@
-import { getDocumentsStructure } from './requests';
-
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+
+import { getDocumentsStructure } from './requests';
+
 import { chaptersDto } from '../test/mockData';
 
 const mockAdapter = new MockAdapter(axios);

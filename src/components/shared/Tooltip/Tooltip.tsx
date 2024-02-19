@@ -1,7 +1,9 @@
 import React from 'react';
 
-import './Tooltip.scss';
 import {TestRoles} from "../../../test/testRoles";
+
+import './Tooltip.scss';
+
 
 type TooltipPosition = 'top' | 'bottom' | 'right' | 'left';
 

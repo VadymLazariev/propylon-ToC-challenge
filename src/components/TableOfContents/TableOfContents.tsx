@@ -1,10 +1,13 @@
 import { useGetDocumentStructure } from "../../hooks/useGetDocumentStructure";
-import styles from "./TableOfContents.module.scss";
+
 import { Navigation } from "../Navigation/Navigation";
 import { ContentView } from "../ContentView/ContentView";
 import { ChapterProvider } from "../../context/ChapterContext";
-import {Loader} from "../../shared/components/Loader/Loader";
-import {Error} from "../../shared/components/Error/Error";
+import {Loader} from "../shared/Loader/Loader";
+import {Error} from "../shared/Error/Error";
+
+import styles from "./TableOfContents.module.scss";
+
 
 export const TableOfContents = () => {
   const { data: chapters, isError, isLoading } = useGetDocumentStructure();

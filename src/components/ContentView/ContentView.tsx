@@ -1,8 +1,11 @@
 import { FC, useEffect, useState } from "react";
+
 import { useChapter } from "../../context/ChapterContext";
 import { Chapter } from "../../types";
-import styles from "./ContentView.module.scss";
 import {TestRoles} from "../../test/testRoles";
+
+import styles from "./ContentView.module.scss";
+
 
 function findChapterById(chapters: Chapter[], id: string): Chapter | null {
   let result = null;

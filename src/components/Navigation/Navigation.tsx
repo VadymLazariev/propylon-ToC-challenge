@@ -1,8 +1,10 @@
-import { Chapter } from "../../types";
 import { FC, useEffect } from "react";
+
+import { Chapter } from "../../types";
 import { NavigationItem } from "./NavigationItem/NavigationItem";
-import styles from "./Navigation.module.scss";
 import { useChapter } from "../../context/ChapterContext";
+
+import styles from "./Navigation.module.scss";
 
 type NavigationProps = {
   chapters: Chapter[];

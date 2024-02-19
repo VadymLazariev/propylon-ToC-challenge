@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './Loader.module.scss';
+
 import {TestRoles} from "../../../test/testRoles";
 
 export const Loader: React.FC = () => (
